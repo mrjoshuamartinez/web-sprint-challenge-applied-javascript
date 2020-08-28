@@ -5,7 +5,7 @@
 // You will be creating a card for each article in the response.
 // This won't be as easy as just iterating over an array though.
 //
-// Write a function that takes a single article object and returns the following markup:
+// Write a function that takes a single article obj and returns the following markup:
 //
 // <div class="card">
 //   <div class="headline">{Headline of article}</div>
@@ -32,3 +32,32 @@ axios
     .catch(err => {
         console.log(err);
     })
+
+    // creating Card Maker Function
+    function cardMaker(obj) {
+        const cardDiv = document.createElement('div');
+        const headlineDiv = document.createElement('div');
+        const authorDiv = document.createElement('div');
+        const imgDiv = document.createElement('div');
+        const img = document.createElement('img');
+        const span = document.createElement('span');
+   
+        cardDiv.classList.add('card');
+        headlineDiv.classList.add('headline');
+        authorDiv.classList.add('author');
+        imgDiv.classList.add('img-container');
+   
+        headlineDiv.textContent = obj.headline;
+        img.src = obj.authorPhoto;
+        span.textContent = `By ${obj.authorName}`;
+        cardDiv.appendChild(headlineDiv);
+        cardDiv.appendChild(authorDiv);
+        authorDiv.appendChild(imgDiv);
+        imgDiv.appendChild(img);
+        authorDiv.appendChild(span);
+   
+        cardDiv.addEventListener('click', (event) => {
+           console.log(headlineDiv.textContent = obj.headline);
+        });
+        return cardDiv;
+    };
