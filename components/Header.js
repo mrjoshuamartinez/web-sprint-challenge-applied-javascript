@@ -17,6 +17,12 @@ function Header() {
     const date = document.createElement ('span');
     const h1Tag = document.createElement ('h1');
     const temp = document.createElement ('span');
+
+    // appending elements
+    divTag.appendChild (date);
+    divTag.appendChild (h1Tag);
+    divTag.appendChild (temp);
+
 }
 
 Header ();
