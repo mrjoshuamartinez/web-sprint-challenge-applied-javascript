@@ -33,6 +33,9 @@ function Header() {
     h1Tag.textContent = 'Lambda Times';
     temp.textContent = '98°';
 
+    // appending header to divTag
+    const headerContainer = document.querySelector ('.header-container');
+    headerContainer.appendChild (divTag);
 }
 
 Header ();
