@@ -23,6 +23,11 @@ function Header() {
     divTag.appendChild (h1Tag);
     divTag.appendChild (temp);
 
+    // adding elements to classList
+    divTag.classList.add ('header');
+    date.classList.add ('date');
+    temp.classList.add ('temp');
+
 }
 
 Header ();
