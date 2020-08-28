@@ -16,8 +16,15 @@ axios
 .then((res) => {
     console.log(res);
     // console.log(res.data.topics);
-    let tabs = res.data.topics
-    // console.log(tabs);        
+    let tabs = res.data.topics;
+    // console.log(tabs);  
+    const tabTopics = document.querySelector('.topics');
+    // console.log(tabTopics);
+    tabs.forEach((e) => {
+        let tab = tabAssigner(e);
+        console.log(e);
+        tabTopics.appendChild(tab);
+     });
     })
 .catch((err) => {
     console.log(err);
