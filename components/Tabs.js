@@ -14,6 +14,9 @@ axios
 .get(`https://lambda-times-api.herokuapp.com/topics`)
 .then((res) => {
     console.log(res);
+    console.log(res.data.topics);
+    let tabs = res.data.topics
+    console.log(tabs);
     })
 .catch((err) => {
     console.log(err);
