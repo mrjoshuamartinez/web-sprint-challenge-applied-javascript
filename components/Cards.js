@@ -28,6 +28,35 @@ axios
     .get(`https://lambda-times-api.herokuapp.com/articles`)
     .then(res => {
         console.log(res);
+        const cardsContainer = document.querySelector('.cards-container');
+        console.log(cardsContainer);
+        let data = res.data.articles;
+        console.log(data);
+        let bootstrap = data.bootstrap;
+        console.log(bootstrap);
+        let javascript = data.javascript;
+        console.log(javascript);
+        let technology = data.technology;
+        console.log(technology);
+        let jquery = data.jquery;
+        console.log(jquery);
+        let node = data.node;
+        console.log(node);
+        node.forEach((e) => {
+            cardsContainer.appendChild(cardMaker(e));
+        });
+        javascript.forEach((e) => {
+            cardsContainer.appendChild(cardMaker(e));
+        });
+        bootstrap.forEach((e) => {
+            cardsContainer.appendChild(cardMaker(e));
+        });
+        technology.forEach((e) => {
+            cardsContainer.appendChild(cardMaker(e));
+        });
+        jquery.forEach((e) => {
+            cardsContainer.appendChild(cardMaker(e));
+        });
     })
     .catch(err => {
         console.log(err);
@@ -56,7 +85,7 @@ axios
         imgDiv.appendChild(img);
         authorDiv.appendChild(span);
    
-        cardDiv.addEventListener('click', (event) => {
+        cardDiv.addEventListener('click', (e) => {
            console.log(headlineDiv.textContent = obj.headline);
         });
         return cardDiv;
