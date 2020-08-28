@@ -28,6 +28,11 @@ function Header() {
     date.classList.add ('date');
     temp.classList.add ('temp');
 
+    // adding content to elements
+    date.textContent = "MARCH 28, 2020";
+    h1Tag.textContent = 'Lambda Times';
+    temp.textContent = '98°';
+
 }
 
 Header ();
